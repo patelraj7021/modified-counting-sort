@@ -10,7 +10,7 @@ def mod_count_sort(list_in, sorting_index):
         indices[elem[sorting_index]].append(i)
     list_out = []
     keys = indices.keys()
-    keys.sort(reverse=True)
+    keys.sort()
     for key in keys:
         target_indices = indices[key]
         for target_index in target_indices:
