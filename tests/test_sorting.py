@@ -20,6 +20,3 @@ def create_test_data(n, k):
         test_data[splits[i]:splits[i+1]] = object_list
     return test_data
 
-test = [1]*10
-test[5:10] = [0]*5
-print(test)
