@@ -1,18 +1,17 @@
 from collections import defaultdict
 
-def mod_count_sort(list_in, sorting_index):    
-    # assuming list_in is an iterable of iterables
-    # e.g., of the format
-    # [ (sorting_value, other_value, ...), ...]
-    # sorting_index indicates which index of the inner iterable to sort by
+def mod_count_sort(list_in, sorting_attribute):    
+    # assuming list_in is an iterable of objects
+    # sorting_attribute indicates which attribute of the object to sort by
     indices = defaultdict(list)
     for i, elem in enumerate(list_in):
-        indices[elem[sorting_index]].append(i)
+        indices[getattr(elem, sorting_attribute)].append(i)
     list_out = []
-    keys = indices.keys()
+    keys = list(indices.keys())
     keys.sort()
     for key in keys:
         target_indices = indices[key]
+        print(target_indices)
         for target_index in target_indices:
             list_out.append(list_in[target_index])
     return list_out
