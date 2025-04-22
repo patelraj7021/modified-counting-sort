@@ -11,7 +11,8 @@ class DataObject:
 
 def create_test_data(n, k):
     nums = range(0, k)
-    splits = [0] + sample(range(1, n-1), k-1) + [n]
+    splits = [0] + sample(range(1, n), k-1) + [n]
+    splits.sort()
     test_data = [None]*n
     for i in range(len(splits)-1):
         object_list = []
@@ -20,3 +21,20 @@ def create_test_data(n, k):
         test_data[splits[i]:splits[i+1]] = object_list
     return test_data
 
+@pytest.mark.parametrize('data_params_in', [
+                (10, 3),
+                (100, 5),
+                (42342, 234),
+                (234211, 23)])  
+class TestCreateData:
+    
+    def test_len_data(self, data_params_in):
+        sorted_list = create_test_data(*data_params_in)
+        assert len(sorted_list) == data_params_in[0]
+        
+    def test_num_subsets(self, data_params_in):
+        sorted_list = create_test_data(*data_params_in)
+        vals = set()
+        for elem in sorted_list:
+            vals.add(elem.val)
+        assert len(vals) == data_params_in[1]
