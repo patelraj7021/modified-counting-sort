@@ -63,5 +63,5 @@ class TestSortingFunction:
         shuffled_list = original_list.copy()
         shuffle(shuffled_list)
         my_sorted_list = mod_count_sort(shuffled_list, 'val')
-        python_sorted_list = sorted(shuffled_list, key=lambda test_data: test_data.val)
+        python_sorted_list = sorted(shuffled_list, key=lambda shuffled_list: shuffled_list.val)
         assert my_sorted_list == python_sorted_list

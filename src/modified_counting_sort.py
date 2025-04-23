@@ -11,7 +11,6 @@ def mod_count_sort(list_in, sorting_attribute):
     keys.sort()
     for key in keys:
         target_indices = indices[key]
-        print(target_indices)
         for target_index in target_indices:
             list_out.append(list_in[target_index])
     return list_out
