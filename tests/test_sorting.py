@@ -28,7 +28,8 @@ def create_test_data(n, k):
                 (10, 3),
                 (100, 5),
                 (42342, 234),
-                (234211, 23)])  
+                (234211, 23),
+                (20, 6)])  
 class TestCreateData:
     
     def test_len_data(self, data_params_in):
@@ -55,7 +56,8 @@ class TestCreateData:
                 (42342, 234),
                 (234211, 23),
                 (132,100),
-                (1234234, 1231)])          
+                (1234234, 1231),
+                (20, 6)])          
 class TestSortingFunction:
 
     def test_sorting(self, data_params_in):

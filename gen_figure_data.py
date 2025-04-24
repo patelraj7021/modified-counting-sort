@@ -6,7 +6,7 @@ import pandas as pd
 
 
 n_s = [10**i for i in range(2, 7)]
-k_s = [i/100 for i in range(1, 41, 4)]
+k_s = [i/100 for i in range(1, 6, 5)]
 
 results = []
 for n in n_s:
